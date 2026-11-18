@@ -1,0 +1,303 @@
+﻿
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raisya Nazwa — Creative Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Great+Vibes&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{navy:'#586384',cream:'#DFCC9E',beige:'#C0B39A',whitepaper:'#F9F6F1',charcoal:'#3B3636'},fontFamily:{serif:['Playfair Display','serif'],sans:['DM Sans','sans-serif'],script:['Great Vibes','cursive'],display:['Oswald','sans-serif']}}}}
+</script>
+<style>   
+*{scroll-behavior:smooth}
+body{background:#C0B39A;color:#3B3636;font-family:'DM Sans',sans-serif}
+.paper-grid{background-color:#F9F6F1;background-image:linear-gradient(#58638418 1px,transparent 1px),linear-gradient(90deg,#58638418 1px,transparent 1px);background-size:27px 27px}
+.blue-grid{background-color:#586384;background-image:linear-gradient(#ffffff18 1px,transparent 1px),linear-gradient(90deg,#ffffff18 1px,transparent 1px);background-size:27px 27px}
+.cream-grid{background-color:#DFCC9E;background-image:linear-gradient(#58638420 1px,transparent 1px),linear-gradient(90deg,#58638420 1px,transparent 1px);background-size:27px 27px}
+.tape{position:absolute;width:75px;height:23px;background:#586384;top:-10px;left:50%;transform:translateX(-50%) rotate(-5deg);z-index:5;box-shadow:0 2px 4px #0002}
+.tape:after{content:'✦ ✧ ✦';position:absolute;color:#DFCC9E;font-size:10px;left:15px;top:4px}
+.note{background:#F9F6F1;box-shadow:2px 5px 12px #3B363622;transition:.35s}
+.note:hover{transform:translateY(-9px) rotate(0deg)!important}
+.photo-frame{background:#F9F6F1;padding:8px 8px 23px;box-shadow:2px 5px 15px #3B363633}
+.barcode{height:35px;background:repeating-linear-gradient(90deg,#3B3636 0px,#3B3636 2px,transparent 2px,transparent 4px,#3B3636 5px,#3B3636 6px,transparent 6px,transparent 9px)}
+.nav-link{position:relative}
+.nav-link:after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#DFCC9E;transition:.3s}
+.nav-link:hover:after{width:100%}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+.phone{border:5px solid #F9F6F1;border-radius:22px;background:#F9F6F1;box-shadow:0 5px 15px #3B363633;overflow:hidden}
+.phone img{height:220px;width:100%;object-fit:cover}
+.project-card{transition:.35s}
+.project-card:hover{transform:translateY(-8px)}
+.skill-line{height:5px;background:#C0B39A;border-radius:10px;overflow:hidden}
+.skill-line span{display:block;height:100%;background:#586384;border-radius:10px}
+::selection{background:#586384;color:#F9F6F1}
+@media(max-width:640px){.paper-grid,.blue-grid,.cream-grid{background-size:20px 20px}.phone img{height:175px}}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#586384]/95 backdrop-blur-md text-[#F9F6F1] px-5 md:px-12 py-4">
+<div class="max-w-6xl mx-auto flex justify-between items-center">
+<a href="#home" class="font-serif text-2xl tracking-wider">R.N<span class="text-[#DFCC9E]">.</span></a>
+<div class="hidden md:flex gap-7 text-[10px] tracking-[.2em] uppercase">
+<a class="nav-link" href="#about">About</a>
+<a class="nav-link" href="#skills">Skills</a>
+<a class="nav-link" href="#projects">Projects</a>
+<a class="nav-link" href="#journey">Journey</a>
+<a class="nav-link" href="#contact">Contact</a>
+</div>
+<button id="menuBtn" class="md:hidden text-2xl">☰</button>
+</div>
+<div id="mobileMenu" class="hidden md:hidden flex-col gap-5 pt-5 text-xs tracking-widest uppercase">
+<a href="#about">About Me</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+</div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-4 md:px-10 pt-24 pb-10 space-y-7">
+
+<!-- 01 HERO -->
+<section id="home" class="blue-grid min-h-[490px] flex items-center justify-center p-5 md:p-12 relative overflow-hidden">
+<div class="absolute inset-5 border border-[#DFCC9E]/50"></div>
+<div class="absolute top-9 left-8 text-[#DFCC9E] text-5xl">✳</div>
+<div class="absolute bottom-8 right-8 text-[#DFCC9E] text-5xl">✦</div>
+<div class="relative bg-[#DFCC9E] w-full max-w-4xl min-h-[350px] p-6 md:p-10 rotate-[-1deg] shadow-2xl flex flex-col md:flex-row items-center gap-7">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 text-6xl text-gray-400 drop-shadow-lg">♧</div>
+<div class="flex-1 w-full pt-5">
+<p class="uppercase tracking-[.3em] text-[9px] mb-4">UGC · Creative Portfolio · 2026</p>
+<p class="font-display text-xl uppercase tracking-widest">Welcome to my</p>
+<h1 class="font-display text-6xl md:text-8xl uppercase leading-[.9] text-[#586384]">Portfolio</h1>
+<p class="font-script text-5xl md:text-6xl mt-4">Raisya Nazwa</p>
+<p class="text-[9px] tracking-[.2em] uppercase mt-3">Web Developer · UI/UX Designer</p>
+<div class="barcode w-36 mt-6"></div>
+<p class="text-[8px] tracking-widest mt-2">A COLLECTION OF IDEAS & CREATIONS</p>
+<div class="flex gap-3 mt-5 text-lg"><span>✦</span><span>⌘</span><span>♡</span><span>↗</span></div>
+</div>
+<div class="relative w-full md:w-[40%]">
+<div class="photo-frame rotate-[3deg]">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700" class="w-full h-[230px] md:h-[255px] object-cover" alt="Portrait">
+</div>
+<div class="absolute -bottom-4 -left-5 bg-[#586384] text-[#F9F6F1] px-4 py-2 rotate-[-8deg] font-script text-2xl shadow-lg">Hello there!</div>
+</div>
+<div class="absolute bottom-4 right-7 text-[#586384] text-3xl">✳</div>
+</div>
+<div class="absolute bottom-4 left-8 text-[#F9F6F1] text-[8px] tracking-[.3em]">PERSONAL COLLECTION — EST. 2026</div>
+</section>
+
+<!-- 02 WHY ME -->
+<section class="paper-grid p-7 md:p-10 min-h-[330px]">
+<div class="flex flex-col md:flex-row justify-between gap-4 mb-12">
+<h2 class="font-serif text-3xl md:text-5xl uppercase leading-none">Why work<br>with me?</h2>
+<p class="text-[10px] uppercase tracking-wider md:max-w-[230px]">My creative approach<br><b>Personality + Storytelling + Visuals</b></p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+<div class="note p-4 rotate-[-4deg] relative"><div class="tape"></div><h3 class="font-serif italic text-lg">Curious</h3><p class="text-[10px] mt-2 leading-relaxed">Always excited to learn something new and explore different ideas.</p></div>
+<div class="note p-4 rotate-[3deg] relative"><div class="tape"></div><h3 class="font-serif italic text-lg">Creative</h3><p class="text-[10px] mt-2 leading-relaxed">Turning simple ideas into meaningful and attractive visuals.</p></div>
+<div class="note p-4 rotate-[-2deg] relative"><div class="tape"></div><h3 class="font-serif italic text-lg">Adaptive</h3><p class="text-[10px] mt-2 leading-relaxed">Open to feedback, challenges, and different perspectives.</p></div>
+<div class="note p-4 rotate-[4deg] relative"><div class="tape"></div><h3 class="font-serif italic text-lg">Dedicated</h3><p class="text-[10px] mt-2 leading-relaxed">Committed to creating thoughtful work with attention to detail.</p></div>
+</div>
+</section>
+
+<!-- 03 ABOUT -->
+<section id="about" class="grid md:grid-cols-2 overflow-hidden">
+<div class="bg-[#586384] text-[#F9F6F1] p-8 md:p-12 relative">
+<div class="text-[#DFCC9E] text-3xl">✦</div>
+<p class="font-script text-5xl md:text-6xl mt-3">Hey, I'm</p>
+<h2 class="font-display text-5xl md:text-6xl uppercase">Raisya.</h2>
+<p class="text-xs leading-[2] mt-6 opacity-90">I'm a PPLG student with a strong interest in web development and UI/UX design. I love exploring technology, creating digital experiences, and bringing ideas to life through design and code.</p>
+<p class="text-xs leading-[2] mt-4 opacity-90">For me, every project is an opportunity to learn, experiment, and grow. I'm always looking for new ways to combine creativity and technology.</p>
+<a href="#contact" class="inline-block mt-7 text-[10px] tracking-[.2em] border-b border-[#DFCC9E] pb-2">LET'S CONNECT ↗</a>
+<div class="font-script text-4xl text-[#DFCC9E] mt-8">stay curious ♡</div>
+</div>
+<div class="cream-grid p-7 md:p-10 relative flex items-center justify-center min-h-[390px]">
+<div class="photo-frame w-[75%] rotate-[-4deg]">
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700" class="w-full h-[260px] object-cover" alt="About portrait">
+<p class="font-script text-2xl text-center mt-2">a little about me</p>
+</div>
+<div class="absolute top-7 right-8 bg-[#586384] text-[#F9F6F1] p-4 rotate-[6deg] shadow-lg text-xs font-serif">CREATOR<br>PROFILE</div>
+<div class="absolute bottom-7 left-5 bg-[#F9F6F1] p-3 rotate-[-8deg] font-script text-2xl shadow">dream big ✦</div>
+</div>
+</section>
+
+<!-- CREATOR PROFILE -->
+<section class="paper-grid p-7 md:p-10">
+<div class="flex justify-between items-center mb-7">
+<h2 class="font-display text-3xl md:text-4xl uppercase text-[#586384]">Creator profile</h2><span class="text-3xl text-[#586384]">✦</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+<div class="space-y-3 text-xs">
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Name</b><span>Raisya Nazwa</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Occupation</b><span>PPLG Student</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Interest</b><span>Web Development</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Specialty</b><span>UI/UX & Frontend</span></div>
+</div>
+<div class="space-y-3 text-xs mt-3 md:mt-0">
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Tools</b><span>VS Code, Figma</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Languages</b><span>HTML, CSS, JavaScript, PHP</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Framework</b><span>Laravel, Tailwind CSS</span></div>
+<div class="flex border-b border-[#586384]/25 pb-2"><b class="w-32 uppercase text-[10px]">Availability</b><span>Open to collaboration</span></div>
+</div>
+</div>
+</section>
+
+<!-- 04 SKILLS -->
+<section id="skills" class="cream-grid p-7 md:p-10">
+<div class="flex flex-col md:flex-row justify-between gap-4">
+<h2 class="font-display text-5xl md:text-6xl uppercase text-[#586384] leading-none">My creative<br>toolbox.</h2>
+<p class="text-xs md:max-w-[230px] leading-relaxed">A collection of skills and tools that help me transform ideas into digital experiences.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+<div class="bg-[#F9F6F1] p-5 rotate-[-2deg]"><span class="text-3xl text-[#586384]">⌘</span><h3 class="font-serif text-xl mt-3">Frontend</h3><p class="text-[10px] mt-2">HTML · CSS · JavaScript · Tailwind</p></div>
+<div class="bg-[#F9F6F1] p-5 rotate-[2deg]"><span class="text-3xl text-[#586384]">✎</span><h3 class="font-serif text-xl mt-3">UI/UX Design</h3><p class="text-[10px] mt-2">Wireframe · Layout · Prototyping</p></div>
+<div class="bg-[#F9F6F1] p-5 rotate-[-2deg]"><span class="text-3xl text-[#586384]">⌘</span><h3 class="font-serif text-xl mt-3">Backend</h3><p class="text-[10px] mt-2">PHP · Laravel · MySQL</p></div>
+<div class="bg-[#F9F6F1] p-5 rotate-[2deg]"><span class="text-3xl text-[#586384]">✧</span><h3 class="font-serif text-xl mt-3">Creative</h3><p class="text-[10px] mt-2">Visual Ideas · Problem Solving</p></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mt-12">
+<div><div class="flex justify-between text-xs mb-2"><b>HTML & CSS</b><span>Learning</span></div><div class="skill-line"><span style="width:85%"></span></div></div>
+<div><div class="flex justify-between text-xs mb-2"><b>JavaScript</b><span>Learning</span></div><div class="skill-line"><span style="width:65%"></span></div></div>
+<div><div class="flex justify-between text-xs mb-2"><b>Laravel & PHP</b><span>Learning</span></div><div class="skill-line"><span style="width:75%"></span></div></div>
+<div><div class="flex justify-between text-xs mb-2"><b>UI/UX Design</b><span>Learning</span></div><div class="skill-line"><span style="width:70%"></span></div></div>
+</div>
+</section>
+
+<!-- 05 PROJECTS -->
+<section id="projects" class="paper-grid p-7 md:p-10">
+<div class="flex flex-col md:flex-row justify-between gap-3 mb-9">
+<h2 class="font-display text-5xl md:text-6xl uppercase leading-none text-[#586384]">Featured<br>projects.</h2>
+<p class="text-xs md:max-w-[220px]">A few things I've been learning, building, and creating along the way.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-7">
+<article class="project-card">
+<div class="relative bg-[#DFCC9E] p-3 rotate-[-2deg]"><div class="tape"></div><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700" class="w-full h-52 object-cover" alt="Web project"></div>
+<div class="flex justify-between mt-5 items-center"><h3 class="font-serif text-xl">Access Internship</h3><span>↗</span></div>
+<p class="text-[10px] mt-2 leading-relaxed">A web-based internship management platform developed with Laravel.</p>
+<p class="text-[9px] uppercase tracking-widest mt-3 text-[#586384]">Laravel · MySQL · Tailwind</p>
+</article>
+<article class="project-card">
+<div class="relative bg-[#DFCC9E] p-3 rotate-[2deg]"><div class="tape"></div><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=700" class="w-full h-52 object-cover" alt="Portfolio project"></div>
+<div class="flex justify-between mt-5 items-center"><h3 class="font-serif text-xl">Creative Portfolio</h3><span>↗</span></div>
+<p class="text-[10px] mt-2 leading-relaxed">A personal digital space showcasing creative ideas and web experiments.</p>
+<p class="text-[9px] uppercase tracking-widest mt-3 text-[#586384]">HTML · CSS · JavaScript</p>
+</article>
+<article class="project-card">
+<div class="relative bg-[#DFCC9E] p-3 rotate-[-2deg]"><div class="tape"></div><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=700" class="w-full h-52 object-cover" alt="PetERP project"></div>
+<div class="flex justify-between mt-5 items-center"><h3 class="font-serif text-xl">PetERP</h3><span>↗</span></div>
+<p class="text-[10px] mt-2 leading-relaxed">A business management application for petshop and pet services.</p>
+<p class="text-[9px] uppercase tracking-widest mt-3 text-[#586384]">Web Application · UI</p>
+</article>
+</div>
+<div class="text-center mt-12"><a href="#contact" class="inline-block border border-[#586384] px-7 py-3 text-[10px] tracking-widest hover:bg-[#586384] hover:text-[#F9F6F1] transition">LET'S CREATE SOMETHING ↗</a></div>
+</section>
+
+<!-- 06 JOURNEY -->
+<section id="journey" class="blue-grid text-[#F9F6F1] p-7 md:p-12">
+<div class="flex justify-between items-start mb-10">
+<h2 class="font-display text-5xl md:text-6xl uppercase leading-none">My little<br>journey.</h2><span class="text-4xl text-[#DFCC9E]">✦</span>
+</div>
+<div class="space-y-9 border-l border-[#DFCC9E]/50 ml-2 pl-7">
+<div class="relative"><span class="absolute -left-[34px] top-1 w-3 h-3 rounded-full bg-[#DFCC9E]"></span><p class="text-[#DFCC9E] text-[10px] tracking-widest">EDUCATION</p><h3 class="font-serif text-2xl mt-1">Software & Game Development</h3><p class="text-xs opacity-70 mt-2">Vocational High School · PPLG</p><p class="text-xs mt-2 leading-relaxed max-w-xl">Learning programming fundamentals, web technologies, databases, and digital problem solving.</p></div>
+<div class="relative"><span class="absolute -left-[34px] top-1 w-3 h-3 rounded-full bg-[#DFCC9E]"></span><p class="text-[#DFCC9E] text-[10px] tracking-widest">INTERNSHIP EXPERIENCE</p><h3 class="font-serif text-2xl mt-1">CV Access Media</h3><p class="text-xs opacity-70 mt-2">Practical Work Experience (PKL)</p><p class="text-xs mt-2 leading-relaxed max-w-xl">Exploring Laravel development, building web features, collaborating on projects, and learning through real working environments.</p></div>
+</div>
+</section>
+
+<!-- 07 PROCESS -->
+<section class="cream-grid p-7 md:p-10">
+<h2 class="font-display text-5xl md:text-6xl uppercase text-[#586384]">How I create.</h2>
+<p class="text-xs mt-3 mb-9">A little look at my creative process.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+<div class="bg-[#F9F6F1] p-5"><span class="font-display text-5xl text-[#586384]">01</span><h3 class="font-serif text-xl mt-4">Discover</h3><p class="text-[10px] mt-2 leading-relaxed">Understand the idea, purpose, and needs of each project.</p></div>
+<div class="bg-[#F9F6F1] p-5"><span class="font-display text-5xl text-[#586384]">02</span><h3 class="font-serif text-xl mt-4">Explore</h3><p class="text-[10px] mt-2 leading-relaxed">Collect inspiration and explore creative possibilities.</p></div>
+<div class="bg-[#F9F6F1] p-5"><span class="font-display text-5xl text-[#586384]">03</span><h3 class="font-serif text-xl mt-4">Create</h3><p class="text-[10px] mt-2 leading-relaxed">Turn ideas into designs and functional experiences.</p></div>
+<div class="bg-[#F9F6F1] p-5"><span class="font-display text-5xl text-[#586384]">04</span><h3 class="font-serif text-xl mt-4">Refine</h3><p class="text-[10px] mt-2 leading-relaxed">Review, improve, and polish every little detail.</p></div>
+</div>
+</section>
+
+<!-- 08 TESTIMONIALS -->
+<section class="paper-grid p-7 md:p-10">
+<div class="text-center">
+<p class="uppercase text-[9px] tracking-[.3em]">Kind words & little moments</p>
+<h2 class="font-display text-4xl md:text-5xl uppercase text-[#586384] mt-3">Sweet feedback.</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-7 mt-10">
+<div class="note p-7 rotate-[-2deg] relative"><div class="tape"></div><span class="text-4xl text-[#586384]">“</span><p class="font-serif italic text-lg leading-relaxed">Your testimonial will be featured here. A little space for kind words about working together.</p><p class="text-[9px] uppercase tracking-widest mt-5">— Future collaborator</p></div>
+<div class="note p-7 rotate-[2deg] relative"><div class="tape"></div><span class="text-4xl text-[#586384]">“</span><p class="font-serif italic text-lg leading-relaxed">Great ideas start with curiosity, and it's always wonderful to see them come to life.</p><p class="text-[9px] uppercase tracking-widest mt-5">— Creative notes</p></div>
+</div>
+</section>
+
+<!-- 09 CONTACT -->
+<section id="contact" class="blue-grid p-7 md:p-14 text-[#F9F6F1] relative overflow-hidden">
+<div class="absolute right-8 top-6 text-7xl text-[#DFCC9E]">✳</div>
+<p class="text-[10px] tracking-[.3em] uppercase">The next chapter starts here</p>
+<h2 class="font-display text-5xl md:text-7xl mt-5 leading-tight uppercase">Let's make<br><span class="font-script text-[#DFCC9E] normal-case">something</span><br>beautiful.</h2>
+<p class="text-xs opacity-80 mt-6 max-w-sm leading-relaxed">Have an interesting idea, project, or opportunity? I'd love to hear about it. Let's connect and create something meaningful.</p>
+<a href="https://wa.me/6281234567890" target="_blank" class="inline-flex mt-8 items-center gap-5 bg-[#DFCC9E] text-[#3B3636] px-7 py-4 text-xs tracking-widest hover:bg-[#F9F6F1] transition">GET IN TOUCH <span>↗</span></a>
+<div class="mt-12 border-t border-[#F9F6F1]/30 pt-6 flex flex-wrap gap-6 text-[10px] uppercase tracking-widest">
+<a href="https://instagram.com/" target="_blank">Instagram ↗</a>
+<a href="https://github.com/" target="_blank">GitHub ↗</a>
+<a href="https://linkedin.com/" target="_blank">LinkedIn ↗</a>
+</div>
+</section>
+
+<!-- 10 FOOTER -->
+<footer class="bg-[#DFCC9E] p-7 md:p-10">
+<div class="flex flex-col md:flex-row justify-between gap-8">
+<div>
+<a href="#home" class="font-display text-5xl text-[#586384]">R.N.</a>
+<p class="font-script text-3xl mt-2">Made with creativity.</p>
+<p class="text-[9px] tracking-widest uppercase mt-3">A little portfolio, a lot of dreams.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4 text-[10px] uppercase tracking-widest">
+<a href="#home">Home ↗</a><a href="#about">About ↗</a>
+<a href="#skills">Skills ↗</a><a href="#projects">Projects ↗</a>
+<a href="#journey">Journey ↗</a><a href="#contact">Contact ↗</a>
+</div>
+</div>
+<div class="border-t border-[#586384]/30 mt-9 pt-5 flex flex-col md:flex-row justify-between gap-3 text-[9px] tracking-widest uppercase">
+<p>© 2026 Raisya Nazwa. All rights reserved.</p>
+<p>Designed with love & a little bit of magic ✦</p>
+</div>
+</footer>
+</main>
+
+<button id="topBtn" class="fixed bottom-6 right-6 bg-[#586384] text-[#F9F6F1] w-11 h-11 rounded-full shadow-xl opacity-0 pointer-events-none transition z-40">↑</button>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{
+mobileMenu.classList.toggle('hidden');
+mobileMenu.classList.toggle('flex');
+menuBtn.textContent=mobileMenu.classList.contains('hidden')?'☰':'✕';
+});
+document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{
+mobileMenu.classList.add('hidden');
+mobileMenu.classList.remove('flex');
+menuBtn.textContent='☰';
+}));
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.08});
+document.querySelectorAll('main>section,main>footer').forEach(el=>{
+el.classList.add('reveal');
+observer.observe(el);
+});
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{
+if(window.scrollY>450){
+topBtn.classList.remove('opacity-0','pointer-events-none');
+}else{
+topBtn.classList.add('opacity-0','pointer-events-none');
+}
+});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
