@@ -10,7 +10,8 @@
 <meta property="og:title" content="Raisya Nazwa Khoirunnisa">
 <meta property="og:description" content="A little piece of my creative world: web development, UI/UX, and the projects I am learning from.">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="any" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preload" as="image" href="assets/icaa.jpeg">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,6 +68,15 @@ nav :focus-visible{outline-color:#586384}
 /* Efek hover aktif di semua mode, termasuk saat browser dipakai dalam mode responsive */
 .tool-chip:hover::after,.tool-chip:focus-visible::after,.tool-chip:active::after,.tool-chip.is-active::after{transform:scaleY(1)}
 .tool-chip:hover p,.tool-chip:focus-visible p,.tool-chip:active p,.tool-chip.is-active p{color:#F9F6F1!important}
+/* Mobile: chip biru ditentukan satu-satu supaya polanya pas. Desktop (>=768px) tidak tersentuh. */
+@media(max-width:767px){
+  #tools .tool-chip.chip-blue{background:#586384;border-color:#586384}
+  #tools .tool-chip.chip-blue p{color:#F9F6F1}
+  #tools .tool-chip.chip-blue p + p{color:#F9F6F1b3}
+  #tools .tool-chip.chip-blue::after{background:#F9F6F1}
+  #tools .tool-chip.chip-blue:hover p,#tools .tool-chip.chip-blue:focus-visible p,#tools .tool-chip.chip-blue:active p,#tools .tool-chip.chip-blue.is-active p{color:#586384!important}
+  #tools .tool-chip.chip-blue:hover p + p,#tools .tool-chip.chip-blue:focus-visible p + p,#tools .tool-chip.chip-blue:active p + p,#tools .tool-chip.chip-blue.is-active p + p{color:#586384aa!important}
+}
 dialog{max-width:min(92vw,42rem);width:100%;padding:0;border:0;background:transparent;color:#3B3636;margin:auto}
 dialog::backdrop{background:#1d2233cc;backdrop-filter:blur(4px)}
 dialog[open]{animation:dialog-in .25s ease}
@@ -152,7 +162,7 @@ dialog[open]{animation:dialog-in .25s ease}
 <main id="main">
 
 <!-- 01 HERO -->
-<section id="home" class="blue-grid min-h-[100svh] flex items-center justify-center px-5 md:px-12 pt-28 pb-16 md:pt-24 md:pb-12 relative overflow-hidden sparkles">
+<section id="home" class="blue-grid min-h-[100svh] flex items-center justify-center px-5 md:px-12 pt-24 pb-16 md:pt-24 md:pb-12 relative overflow-hidden sparkles">
 <div class="absolute inset-5 border border-[#DFCC9E]/50 pointer-events-none" aria-hidden="true"></div>
 <div class="absolute top-9 left-8 text-[#DFCC9E] text-5xl" aria-hidden="true">✳</div>
 <div class="absolute bottom-8 right-8 text-[#DFCC9E] text-5xl" aria-hidden="true">✦</div>
@@ -168,9 +178,9 @@ dialog[open]{animation:dialog-in .25s ease}
 <a href="#contact" class="inline-flex items-center gap-2 border border-[#586384]/40 px-4 py-2.5 hover:bg-[#586384] hover:text-[#F9F6F1] transition">Contact me</a>
 </div>
 </div>
-<div class="relative w-full md:w-[40%]">
+<div class="relative w-full md:w-[40%] -mt-2 md:mt-0">
 <figure class="photo-frame rotate-[3deg]">
-<img src="assets/icaa.jpeg" width="900" height="1200" class="w-full h-[290px] md:h-[380px] object-cover object-top" alt="Portrait of Raisya Nazwa wearing a light hijab" fetchpriority="high">
+<img src="assets/icaa.jpeg" width="900" height="1200" class="w-full h-[310px] md:h-[380px] object-cover object-[50%_15%] md:object-top" alt="Portrait of Raisya Nazwa wearing a light hijab" fetchpriority="high">
 </figure>
 <div class="absolute -bottom-4 left-2 md:-left-5 bg-[#586384] text-[#F9F6F1] px-4 py-2 rotate-[-8deg] font-script text-2xl shadow-lg" aria-hidden="true">Hello there!</div>
 </div>
@@ -223,8 +233,8 @@ dialog[open]{animation:dialog-in .25s ease}
 <p class="mb-1.5 md:mb-2"><span class="block font-serif italic text-base md:text-lg leading-none text-[#3B3636]">Frontend</span><span class="block text-[8px] uppercase tracking-[.25em] text-[#586384]/70 mt-1.5">01 / Interface</span></p>
 <div class="grid grid-cols-2 gap-1.5 md:gap-2">
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1.5deg] transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">HTML5</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Markup</p></div>
-<div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:mt-1.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">CSS3</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Styling</p></div>
-<div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:-mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">JavaScript</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Interaction</p></div>
+<div class="tool-chip chip-blue group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:mt-1.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">CSS3</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Styling</p></div>
+<div class="tool-chip chip-blue group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:-mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">JavaScript</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Interaction</p></div>
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1deg] md:mt-0.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">TypeScript</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Typed JS</p></div>
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1.5deg] md:-mt-0.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">Tailwind CSS</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">CSS framework</p></div>
 </div>
@@ -232,16 +242,16 @@ dialog[open]{animation:dialog-in .25s ease}
 <div>
 <p class="mb-1.5 md:mb-2"><span class="block font-serif italic text-base md:text-lg leading-none text-[#3B3636]">Backend</span><span class="block text-[8px] uppercase tracking-[.25em] text-[#586384]/70 mt-1.5">02 / Application</span></p>
 <div class="grid grid-cols-2 gap-1.5 md:gap-2">
-<div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">PHP</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Programming</p></div>
+<div class="tool-chip chip-blue group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">PHP</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Programming</p></div>
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1.5deg] md:-mt-0.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">Laravel</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">PHP framework</p></div>
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1deg] md:mt-0.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">Node.js</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Runtime</p></div>
-<div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1.5deg] md:-mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">REST API</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Integration</p></div>
+<div class="tool-chip chip-blue group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1.5deg] md:-mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">REST API</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Integration</p></div>
 </div>
 </div>
 <div>
 <p class="mb-1.5 md:mb-2"><span class="block font-serif italic text-base md:text-lg leading-none text-[#3B3636]">Database</span><span class="block text-[8px] uppercase tracking-[.25em] text-[#586384]/70 mt-1.5">03 / Data</span></p>
 <div class="grid grid-cols-2 gap-1.5 md:gap-2">
-<div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1.5deg] md:mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">MySQL</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Relational DB</p></div>
+<div class="tool-chip chip-blue group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[-1.5deg] md:mt-1 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">MySQL</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Relational DB</p></div>
 <div class="tool-chip group bg-[#F9F6F1] border border-[#3B3636]/15 px-2 py-1.5 shadow-[1px_2px_6px_#3B363622] rotate-[1deg] md:-mt-0.5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[#586384]"><p class="text-[9px] md:text-[10px] font-bold leading-tight transition-colors duration-300 group-hover:text-[#F9F6F1]">SQLite</p><p class="text-[8px] text-[#3B3636]/60 mt-0.5 transition-colors duration-300 group-hover:text-[#F9F6F1]/70">Database</p></div>
 </div>
 </div>
