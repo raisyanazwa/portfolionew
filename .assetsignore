@@ -1,0 +1,6 @@
+.git/
+.gitignore
+.vscode/
+.wrangler/
+wrangler.toml
+.assetsignore
