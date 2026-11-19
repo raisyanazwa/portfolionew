@@ -1,5 +1,7 @@
 name = "portfolioneww"
 compatibility_date = "2026-11-18"
+main = "./worker.js"
 
 [assets]
 directory = "."
+binding = "ASSETS"
