@@ -86,6 +86,18 @@ dialog[open]{animation:dialog-in .25s ease}
   .tape{width:60px}
   dialog{max-width:94vw}
 }
+/* Motif background berbeda tiap section biar tidak kotak-kotak semua */
+.cream-dots{background-image:radial-gradient(#58638433 1.4px,transparent 1.5px);background-size:22px 22px}
+.blue-diag{background-image:repeating-linear-gradient(45deg,#ffffff12 0 1px,transparent 1px 24px)}
+.blue-confetti{background-image:radial-gradient(circle,#DFCC9E30 2px,transparent 2.5px),radial-gradient(circle,#F9F6F116 1px,transparent 1.5px);background-size:58px 58px,34px 34px;background-position:8px 10px,18px 6px}
+/* Sparkle halus: dua bintang kecil per section, berkedip pelan (tanpa rotasi) */
+.sparkles{position:relative}
+.sparkles::before,.sparkles::after{content:'';position:absolute;z-index:0;pointer-events:none;clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);background:#DFCC9E;opacity:var(--spark-op,.5);animation:sparkle-twinkle 4.5s ease-in-out infinite}
+.sparkles::before{top:12%;right:6%;width:16px;height:16px;--spark-op:.5}
+.sparkles::after{bottom:16%;left:5%;width:11px;height:11px;--spark-op:.35;animation-duration:6s;animation-delay:-2.5s}
+.sparkles.navy::before,.sparkles.navy::after{background:#586384;--spark-op:.2}
+.sparkles.navy::after{--spark-op:.14}
+@keyframes sparkle-twinkle{0%,100%{opacity:calc(var(--spark-op,.5) * .3);transform:scale(.88)}50%{opacity:var(--spark-op,.5);transform:scale(1.1)}}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal,.reveal.show{opacity:1!important;animation:none!important;translate:none!important;filter:none!important}
@@ -140,13 +152,13 @@ dialog[open]{animation:dialog-in .25s ease}
 <main id="main">
 
 <!-- 01 HERO -->
-<section id="home" class="blue-grid min-h-[100svh] flex items-center justify-center px-5 md:px-12 pt-20 pb-20 md:pt-16 md:pb-16 relative overflow-hidden">
+<section id="home" class="blue-grid min-h-[100svh] flex items-center justify-center px-5 md:px-12 pt-28 pb-16 md:pt-24 md:pb-12 relative overflow-hidden sparkles">
 <div class="absolute inset-5 border border-[#DFCC9E]/50 pointer-events-none" aria-hidden="true"></div>
 <div class="absolute top-9 left-8 text-[#DFCC9E] text-5xl" aria-hidden="true">✳</div>
 <div class="absolute bottom-8 right-8 text-[#DFCC9E] text-5xl" aria-hidden="true">✦</div>
 <div class="relative bg-[#DFCC9E] w-full max-w-5xl min-h-[380px] p-7 md:p-14 rotate-[-1deg] shadow-2xl flex flex-col md:flex-row items-center gap-8 md:gap-12">
 <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-6xl text-gray-400 drop-shadow-lg" aria-hidden="true">♧</div>
-<div class="flex-1 w-full pt-5">
+<div class="flex-1 w-full pt-5 md:pt-0 md:-mt-4">
 <p class="uppercase tracking-[.3em] text-[9px] mb-4">Hello</p>
 <h1 class="font-serif italic text-4xl sm:text-5xl md:text-7xl leading-[.95] text-[#586384] tracking-tight">Raisya Nazwa<br><span class="font-serif not-italic font-semibold text-4xl sm:text-5xl md:text-7xl leading-tight text-[#586384] tracking-[-.02em]">Khoirunnisa</span></h1>
 <p class="font-script text-4xl md:text-5xl mt-4 leading-[1.15]">turning ideas into interfaces</p>
@@ -170,7 +182,7 @@ dialog[open]{animation:dialog-in .25s ease}
 
 
 <!-- 03 ABOUT -->
-<section id="about" class="grid md:grid-cols-2 overflow-hidden min-h-[100svh]">
+<section id="about" class="grid md:grid-cols-2 overflow-hidden min-h-[100svh] sparkles navy">
 <div class="bg-[#F9F6F1] text-[#3B3636] p-6 md:p-9 relative flex flex-col justify-center">
 <div class="text-[#586384] text-2xl md:text-3xl" aria-hidden="true">✦</div>
 <p class="font-script text-4xl md:text-5xl mt-2">Hey, I'm</p>
@@ -180,8 +192,8 @@ dialog[open]{animation:dialog-in .25s ease}
 <a href="#contact" class="inline-block mt-5 text-[10px] tracking-[.2em] uppercase border-b border-[#586384] pb-2 hover:text-[#586384] transition">Let's connect ↗</a>
 <div class="font-script text-3xl text-[#586384] mt-5 hidden md:block" aria-hidden="true">stay curious ♡</div>
 </div>
-<div class="paper-grid p-5 md:p-8 relative flex items-center justify-center">
-<div class="relative w-full max-w-[350px] rotate-[-2deg]">
+<div class="paper-grid p-5 md:p-8 relative flex items-start md:items-center justify-center">
+<div class="relative w-full max-w-[350px] -mt-3 md:mt-0 rotate-[-2deg]">
 <figure class="relative bg-white border border-[#586384]/10 px-5 py-5 md:px-7 md:py-6 shadow-[4px_10px_25px_rgba(59,54,54,.18)]">
 <div class="tape" aria-hidden="true"></div>
 <p class="text-[9px] uppercase tracking-[.3em] text-[#586384]/70">A small manifesto</p>
@@ -201,7 +213,7 @@ dialog[open]{animation:dialog-in .25s ease}
 </section>
 
 <!-- 04 TOOLS -->
-<section id="tools" class="cream-grid p-5 md:p-8 min-h-[100svh] flex flex-col justify-center">
+<section id="tools" class="cream-grid cream-dots p-5 md:p-8 min-h-[100svh] flex flex-col justify-center sparkles navy">
 <div class="flex flex-col md:flex-row justify-between gap-2">
 <h2 class="leading-none text-[#586384]"><span class="block font-script text-4xl md:text-5xl mb-1">Tools</span><span class="block font-serif italic text-2xl md:text-3xl">of the trade.</span></h2>
 <p class="text-[11px] md:text-xs md:max-w-[230px] leading-relaxed">The toolkit behind my design and development work — plus the curiosity that keeps it moving.</p>
@@ -244,7 +256,7 @@ dialog[open]{animation:dialog-in .25s ease}
 </section>
 
 <!-- 05 PROJECTS -->
-<section id="projects" class="paper-grid p-7 md:p-8 min-h-[100svh] flex flex-col justify-center">
+<section id="projects" class="paper-grid p-7 md:p-8 min-h-[100svh] flex flex-col justify-center sparkles navy">
 <div class="flex flex-col md:flex-row justify-between gap-3 md:gap-2 mb-9 md:mb-5">
 <h2 class="leading-none text-[#586384]"><span class="block font-serif italic text-2xl md:text-2xl">Featured</span><span class="block font-script text-5xl md:text-5xl mt-1">projects.</span></h2>
 <p class="text-xs md:text-[11px] md:max-w-[220px]">A few things I've been learning, building, and creating along the way.</p>
@@ -287,22 +299,26 @@ dialog[open]{animation:dialog-in .25s ease}
 </section>
 
 <!-- 06 JOURNEY -->
-<section id="journey" class="blue-grid text-[#F9F6F1] p-10 md:p-14 relative overflow-hidden">
-<div class="flex justify-between items-start mb-10">
-<h2 class="leading-none"><span class="block font-serif italic text-2xl md:text-3xl">My little</span><span class="block font-script text-5xl md:text-6xl mt-1 text-[#DFCC9E]">journey.</span></h2><span class="text-4xl text-[#DFCC9E]" aria-hidden="true">✦</span>
+<section id="journey" class="blue-grid blue-diag text-[#F9F6F1] p-10 md:p-14 flex items-center justify-center relative overflow-hidden sparkles">
+<div class="relative w-full max-w-2xl bg-[#DFCC9E] text-[#3B3636] p-6 md:p-8 rotate-[-1deg] border border-[#586384]/15 shadow-[8px_16px_40px_rgba(29,34,51,.35)]">
+<div class="tape" aria-hidden="true"></div>
+<div class="flex justify-between items-start mb-8 md:mb-10">
+<h2 class="leading-none"><span class="block font-serif italic text-2xl md:text-3xl">My little</span><span class="block font-script text-4xl md:text-5xl mt-1 text-[#586384]">journey.</span></h2><span class="text-3xl md:text-4xl text-[#586384]/40" aria-hidden="true">✦</span>
 </div>
-<div class="space-y-10 md:space-y-12 border-l border-[#DFCC9E]/50 ml-2 pl-8">
-<div class="relative"><span class="absolute -left-[45px] top-1.5 w-4 h-4 rounded-full bg-[#DFCC9E]" aria-hidden="true"></span><p class="text-[#DFCC9E] text-[11px] tracking-[.2em]">EDUCATION</p><h3 class="font-serif text-2xl md:text-3xl mt-2">Software &amp; Game Development</h3><p class="text-xs opacity-70 mt-2">Vocational High School · PPLG</p><p class="text-xs md:text-sm mt-3 leading-[1.9] max-w-2xl">Learning programming fundamentals, web technologies, databases, and digital problem solving.</p></div>
-<div class="relative"><span class="absolute -left-[45px] top-1.5 w-4 h-4 rounded-full bg-[#DFCC9E]" aria-hidden="true"></span><p class="text-[#DFCC9E] text-[11px] tracking-[.2em]">INTERNSHIP EXPERIENCE</p><h3 class="font-serif text-2xl md:text-3xl mt-2">CV Access Media</h3><p class="text-xs opacity-70 mt-2">Practical Work Experience (PKL)</p><p class="text-xs md:text-sm mt-3 leading-[1.9] max-w-2xl">Exploring Laravel development, building web features, collaborating on projects, and learning through real working environments.</p></div>
+<div class="space-y-6 md:space-y-8 border-l border-[#586384]/30 ml-2 pl-8">
+<div class="relative"><span class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-[#586384]" aria-hidden="true"></span><p class="text-[#586384] text-[11px] tracking-[.2em]">EDUCATION</p><h3 class="font-serif text-2xl md:text-3xl mt-2">Software &amp; Game Development</h3><p class="text-xs opacity-70 mt-2">Vocational High School · PPLG</p><p class="text-xs md:text-sm mt-3 leading-[1.9] max-w-2xl">Learning programming fundamentals, web technologies, databases, and digital problem solving.</p></div>
+<div class="relative"><span class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-[#586384]" aria-hidden="true"></span><p class="text-[#586384] text-[11px] tracking-[.2em]">INTERNSHIP EXPERIENCE</p><h3 class="font-serif text-2xl md:text-3xl mt-2">CV Access Media</h3><p class="text-xs opacity-70 mt-2">Practical Work Experience (PKL)</p><p class="text-xs md:text-sm mt-3 leading-[1.9] max-w-2xl">Exploring Laravel development, building web features, collaborating on projects, and learning through real working environments.</p></div>
 </div>
-<div class="mt-10 flex items-center justify-center gap-4 text-[#DFCC9E]/70" aria-hidden="true">
-<span class="h-px w-16 bg-[#DFCC9E]/40"></span><span class="text-2xl">✳</span><span class="h-px w-16 bg-[#DFCC9E]/40"></span>
+<div class="mt-8 flex items-center justify-center gap-4 text-[#586384]/50" aria-hidden="true">
+<span class="h-px w-16 bg-[#586384]/30"></span><span class="text-2xl">✳</span><span class="h-px w-16 bg-[#586384]/30"></span>
+</div>
+<div class="absolute -bottom-4 right-6 bg-[#586384] text-[#F9F6F1] px-4 py-2 rotate-[-6deg] font-script text-xl shadow-lg" aria-hidden="true">keep growing ♡</div>
 </div>
 </section>
 
 
 <!-- 08 NOTES -->
-<section id="notes" class="paper-grid p-5 md:p-8 min-h-[100svh] flex flex-col justify-center">
+<section id="notes" class="paper-grid p-5 md:p-8 min-h-[100svh] flex flex-col justify-center sparkles navy">
 <div class="text-center">
 <p class="uppercase text-[9px] tracking-[.3em]">Lessons, thoughts &amp; little moments</p>
 <h2 class="mt-2 leading-none text-[#586384]"><span class="block font-serif italic text-xl md:text-2xl">Notes from</span><span class="block font-script text-3xl md:text-4xl mt-1">the desk.</span></h2>
@@ -315,7 +331,7 @@ dialog[open]{animation:dialog-in .25s ease}
 </section>
 
 <!-- 09 CONTACT -->
-<section id="contact" class="blue-grid p-5 md:p-8 text-[#F9F6F1] relative overflow-hidden min-h-[100svh] flex items-center">
+<section id="contact" class="blue-grid blue-confetti p-5 md:p-8 text-[#F9F6F1] relative overflow-hidden min-h-[100svh] flex items-center sparkles">
 <div class="absolute right-8 top-6 text-6xl md:text-7xl text-[#DFCC9E]" aria-hidden="true">✳</div>
 <div class="relative flex justify-center w-full">
 <form id="contactForm" class="relative w-full max-w-lg bg-[#F9F6F1] text-[#3B3636] p-5 md:p-6 rotate-[1deg] shadow-[6px_14px_35px_rgba(29,34,51,.3)]">
@@ -346,17 +362,17 @@ dialog[open]{animation:dialog-in .25s ease}
 </section>
 
 <!-- 10 FOOTER -->
-<footer class="bg-[#DFCC9E] p-7 md:p-10">
-<div class="flex flex-col items-center gap-5">
+<footer class="bg-[#DFCC9E] p-4 md:p-5">
+<div class="flex flex-col items-center gap-3">
 <nav aria-label="Contact links" class="flex flex-wrap justify-center gap-3">
-<a href="mailto:raisyanazwa373@gmail.com" aria-label="Email Raisya Nazwa" class="grid h-10 w-10 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
-<svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+<a href="mailto:raisyanazwa373@gmail.com" aria-label="Email Raisya Nazwa" class="grid h-9 w-9 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
+<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
 </a>
-<a href="https://github.com/raisyanazwa" target="_blank" rel="noopener noreferrer" aria-label="Raisya Nazwa on GitHub" class="grid h-10 w-10 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
-<svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A12.01 12.01 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+<a href="https://github.com/raisyanazwa" target="_blank" rel="noopener noreferrer" aria-label="Raisya Nazwa on GitHub" class="grid h-9 w-9 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
+<svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A12.01 12.01 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
 </a>
-<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Raisya Nazwa on LinkedIn" class="grid h-10 w-10 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
-<svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.75v20.5c0 .97.79 1.75 1.77 1.75h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Raisya Nazwa on LinkedIn" class="grid h-9 w-9 place-items-center rounded-full border border-[#586384]/30 text-[#586384] transition hover:bg-[#586384] hover:text-[#F9F6F1]">
+<svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.75v20.5c0 .97.79 1.75 1.77 1.75h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
 </a>
 </nav>
 </div>
